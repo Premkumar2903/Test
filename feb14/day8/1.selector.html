@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS Selector Demo</title>
+
+<style>
+
+    h2 {
+        color: darkblue;
+        text-align: center;
+    }
+
+   
+    .highlight {
+        background-color: #fffa9c;
+        padding: 10px;
+        border-left: 4px solid orange;
+    }
+
+ 
+    #special {
+        color: white;
+        background: teal;
+        padding: 10px;
+        border-radius: 6px;
+        font-weight: bold;
+    }
+
+  
+    table {
+        width: 60%;
+        margin: auto;
+        border-collapse: collapse;
+    }
+    td, th {
+        padding: 10px;
+        border: 1px solid #999;
+        text-align: center;
+    }
+</style>
+
+</head>
+<body>
+
+<h2>Weather by Month</h2>
+
+<table>
+    <tr>
+        <th>Month</th>
+        <th>Weather</th>
+    </tr>
+
+    <tr class="highlight">
+        <td>January</td>
+        <td>Cold & Snowy</td>
+    </tr>
+
+    <tr>
+        <td id="special">July</td>
+        <td>Hot & Sunny</td>
+    </tr>
+
+    <tr class="highlight">
+        <td>October</td>
+        <td>Cool & Windy</td>
+    </tr>
+</table>
+
+</body>
+</html>

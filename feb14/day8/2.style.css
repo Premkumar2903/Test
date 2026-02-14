@@ -1,0 +1,28 @@
+/* i) Element selector for all <p> elements */
+p {
+    color: olive;
+    line-height: 1.6;
+}
+
+/* Class selector for .intro */
+.intro {
+    font-style: italic;
+}
+
+/* Class selector for .highlight */
+.highlight {
+    background-color: orchid;
+    padding: 8px;
+}
+
+/* ID selector for #header */
+#header {
+    color: #296caf;
+    font-size: 32px;
+}
+
+/* Additional style for .box class */
+.box {
+    border: 1px solid black;
+    padding: 16px;
+}
