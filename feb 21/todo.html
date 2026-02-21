@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            padding: 6px 20px;
+        }
+        #add-Btn{
+            background-color: lightgreen;
+            border: none;
+            padding: 8px 10px;
+            margin-left: 10px;
+        }
+        .remove-Btn{
+            background-color: orangered;
+            margin: 15px;
+            border: none;
+            padding: 4px 8px;
+        }
+    </style>
+</head>
+<body>
+    <input id="input" type="text" placeholder="Add your task...">
+    <button onclick="text()" id="add-Btn">Add</button>
+    <div>
+        <ul id="ul-list">
+            <li>1 st task</li>
+        </ul>
+    </div>
+
+    <script>
+
+        function text(){
+            let inputText =  document.getElementById('input').value
+            const ulList = document.getElementById('ul-list')
+            let li =document.createElement('li')
+            li.textContent = inputText
+            ulList.append(li);
+
+            let removeBtn = document.createElement('button')
+            removeBtn.textContent = 'X'
+            removeBtn.classList.add('remove-Btn')
+            li.append(removeBtn)
+            
+            removeBtn.addEventListener('click', function(){
+                li.remove()
+            })
+
+            document.getElementById('input').value = '';    // making empty 
+        }
+
+    </script>
+</body>
+</html>

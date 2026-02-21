@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id{
+            font-weight:bold;
+            color:green"
+        }
+        p{
+            border:1px solid #ccc;
+            padding:10px;
+            width:300px;
+        }
+    </style>
+</head>
+<body>
+
+<form id="myForm">
+    <h2>Registration Form:</h2>
+
+    <label>Name:</label>
+    <input type="text" id="name"><br><br>
+
+    <label>Email:</label>
+    <input type="email" id="email"><br><br>
+
+    <label>Password:</label>
+    <input type="password" id="password"><br><br>
+
+    <label>Gender:</label><br>
+    <label>Male</label>
+    <input type="radio" name="gender" value="Male">
+    <label>Female</label>
+    <input type="radio" name="gender" value="Female"><br><br>
+
+    <label>Hobbies</label><br>
+    <label>Cricket</label>
+    <input type="checkbox" value="Cricket" class="hobby">
+    <label>Books</label>
+    <input type="checkbox" value="Books" class="hobby"><br><br>
+
+    <label>D.O.B:</label>
+    <input type="datetime-local" id="dob"><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<p id="msg" ></p>
+
+<h3>Saved Data:</h3>
+<div id="display" style=""></div>
+
+<script>
+window.onload = function () {
+
+    document.getElementById("myForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let dob = document.getElementById("dob").value;
+
+        let gender = document.querySelector("input[name='gender']:checked");
+        gender = gender ? gender.value : "";
+
+        let hobbies = [];
+        document.querySelectorAll(".hobby:checked").forEach(h => hobbies.push(h.value));
+
+        let formData = { name, email, password, gender, hobbies, dob };
+
+        localStorage.setItem("registrationData", JSON.stringify(formData));
+
+        document.getElementById("msg").innerHTML = "Data Saved Successfully!";
+        displayData();
+    });
+
+    function displayData() {
+        let data = localStorage.getItem("registrationData");
+
+        if (data) {
+            let d = JSON.parse(data);
+            document.getElementById("display").innerHTML = `
+                <p><strong>Name:</strong> ${d.name}</p>
+                <p><strong>Email:</strong> ${d.email}</p>
+                <p><strong>Password:</strong> ${d.password}</p>
+                <p><strong>Gender:</strong> ${d.gender}</p>
+                <p><strong>Hobbies:</strong> ${d.hobbies.join(", ")}</p>
+                <p><strong>DOB:</strong> ${d.dob}</p>
+            `;
+        } else {
+            document.getElementById("display").innerHTML =
+                "<span style='color:red'>No data found</span>";
+        }
+    }
+
+    displayData();
+}
+</script>
+
+</body>
+</html>
