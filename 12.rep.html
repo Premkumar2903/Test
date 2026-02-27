@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        header {
+            background-color: plum;
+            padding: 12px;
+        }
+
+        h2 {
+            padding: 10px;
+            background-color: palegreen;
+        }
+
+        main {
+            background-color: lightskyblue;
+            padding: 5px;
+        }
+
+        footer {
+            text-align: center;
+            background-color:darkolivegreen;
+            padding: 3px;
+            margin-top: 30px;
+        }
+
+        .wrapper{
+            position: relative;
+            height: 400px;
+            width: 600px;
+            background: lightseagreen;
+        }
+
+
+        .wrapper iframe{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: calc(100% *(12/16));
+            transform: translate(-50%, -50%);
+            
+        }
+        @media(min-width: 850px) {
+            .wrapper {       
+                height: 480px;
+                width: 854px;
+            }
+        }
+
+        @media(min-width: 1400px) {
+            .wrapper {
+                height: 720px;
+                width: 1280px;
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Favorite Movie</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Nayagan</h2>
+            <div class="wrapper" video-id="Vyaem4eQiw0">
+                    <img  src="nayagan.jpg" alt="">
+            </div>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi neque, dolores in consequuntur ut
+                consectetur magni enim temporibus, quisquam doloremque provident earum, sapiente inventore molestiae
+                quis. Aliquam molestias modi sequi.</p>
+            <!-- <a href="taj.jpg" download>Download</a> -->
+
+
+        </section>
+        <section>
+            <h2>Persuit Of Happiness</h2>
+            <div class="wrapper" video-id="DMOBlEcRuw8">  
+                    <img  src="persuit.jpg" alt="">
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sed
+                quaerat dolorum id blanditiis, ullam labore temporibus! Eum commodi
+                amet qui asperiores nemo corrupti ducimus modi. Quam voluptatem
+                accusantium iusto.
+            </p>
+
+            <!-- <a href="image.png" download>Download</a> -->
+        </section>
+
+        <footer>
+            <h3>&#169 Prem</h3>
+        </footer>
+    </main>
+
+
+    <script>
+        document.querySelectorAll('.wrapper').forEach(wrap => {
+            const video = wrap.getAttribute('video-id');
+            wrap.addEventListener('click', () => {
+                wrap.innerHTML = `
+                    <iframe class= 'movie-img'" 
+                    src="https://www.youtube.com/embed/${video}?si=dDITyhE3Z1nC6-Lb" 
+                    title="YouTube video player" frameborder="0" allow="accelerometer;
+                    autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                    </iframe>
+                `
+            })
+        })
+    </script>
+</body>
+
+</html>

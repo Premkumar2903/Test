@@ -11,65 +11,106 @@
             padding: 0px;
         }
         header{
-            background-color: plum;
+            background-color: rgba(245, 159, 145, 0.8);
             padding: 12px;
         }
         h2{
           padding: 10px;
-          background-color: palegreen;
+          background-color: goldenrod;
         }
         main{
-            background-color: lightskyblue;
+            background-color: lemonchiffon;
             padding: 5px;
         }
-        img{
+        .video-box{
             height: 400px;
             width: 600px;
+            background: black;
+            overflow: hidden;
+            position: relative;
+        }
+        .video-box iframe{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 100%;
+          height: calc(100% * (9/16));
+          transform: translate(-50%, -50%);
         }
 
         footer{
             text-align: center;
-            background-color: rgb(77, 194, 77);
+            background-color:rgba(245, 159, 145, 0.8);
             padding: 3px;
             margin-top: 30px;
         }
 
+        .movie{
+          width: 600px;
+        }
+
         @media(min-width: 850px) {
-          img{
+          .movie{
+            width: 800px;
+          }
+          .video-box{
             height: 600px;
             width: 800px;
           }
         }
+        @media(min-width: 1400px) {
+          .movie{
+            width: 1000px;
+          }
+         .video-box{
+            height: 800px;
+            width: 1000px;
+          }
+        }
+
     </style>
   </head>
   <body>
-    <header><h1>Favorite Movie</h1></header>
+    <header><h1>Favorite Movies</h1></header>
     <main>
       <section>
         <h2>Nayagan</h2>
-        <a href="">
-          <img src="nayagan.jpg" alt="">
-        </a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi neque, dolores in consequuntur ut consectetur magni enim temporibus, quisquam doloremque provident earum, sapiente inventore molestiae quis. Aliquam molestias modi sequi.</p>
-        <a href="taj.jpg" download>Download</a>
+        <div class="movie">
+           <div class="video-box">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Vyaem4eQiw0?si=JujYWG3KSyRlD5r7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p>Nayakan is a 1987 Indian Tamil-language epic crime drama film written and directed by Mani Ratnam. Produced by Muktha Srinivasan, the film stars Kamal Haasan and Saranya (in her feature debut) in the lead, with Janagaraj, Karthika, Vijayan, M. V. Vasudeva Rao, Delhi Ganesh, Nizhalgal Ravi, Nassar and Tara in supporting roles. It revolves around the evolution of Velu Naicker (Haasan) from an ordinary slum dweller to a highly respected crime lord in the Bombay underworld. <br><br>
 
+              Nayakan is loosely based on the life of the Bombay underworld don Varadarajan Mudaliar and the American film The Godfather (1972). Ratnam was initially approached to remake the Hindi film Pagla Kahin Ka (1970) for Srinivasan and Haasan, but refused. He instead suggested two other stories, one of which impressed Haasan and became Nayakan. Cinematography was handled by P. C. Sreeram, and editing by B. Lenin and V. T. Vijayan. Filming began in late 1986, taking place primarily in Madras and to a lesser extent, Bombay.<br><br>
+
+              Nayakan was released on 21 October 1987, Diwali day. The film became a critical and commercial success, running for over 175 days in theatres. It won the National Film Awards for Best Actor in a Leading Role (Haasan), Best Cinematography (Sreeram) and Best Art Direction (Thota Tharani). Nayakan was India's official submission for the Best Foreign Language Film at the 60th Academy Awards, but it was not nominated. It was included in Time's list of the "All-Time 100 Best Films" and News18's "100 greatest Indian films of all time". The film was remade in Hindi as Dayavan (1988).
+            </p>
+              <!-- <a href="taj.jpg" download>Download</a> -->
+           
+        </div>
+       
         
       </section>
+
+
+
       <section>
         <h2>Persuit Of Happiness</h2>
+        <div class="movie">
+          <div class="video-box">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/DMOBlEcRuw8?si=dDITyhE3Z1nC6-Lb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
 
-        <a href="">
-          <img src="persuit.jpg" alt="">
-        </a>
-        
+          <p></p>
+        </div>
+          
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sed
-          quaerat dolorum id blanditiis, ullam labore temporibus! Eum commodi
-          amet qui asperiores nemo corrupti ducimus modi. Quam voluptatem
-          accusantium iusto.
-        </p>
+          The Pursuit of Happyness is a 2006 American biographical self help film directed by Gabriele Muccino and starring Will Smith as Chris Gardner, a homeless salesman. Smith's son Jaden Smith co-stars, making his film debut as Gardner's son, Christopher Jr. <br><br>
+           The screenplay by Steven Conrad is based on the best-selling 2006 memoir of the same name written by Gardner with Quincy Troupe. It is based on Gardner's nearly one-year struggle being homeless. The intentional misspelling of the film's title comes from a mural that Gardner sees on the wall outside the daycare facility his son attended. The movie is set in San Francisco in 1981.
 
-        <a href="image.png" download>Download</a>
+The film was released on December 15, 2006, by Columbia Pictures, and received positive reviews, with Smith's performance and the emotional weight of the story garnering acclaim. Smith was nominated for an Academy Award and a Golden Globe for Best Actor.
+        </p>
+        <!-- <a href="image.png" download>Download</a> -->
       </section>
 
       <footer><h3>&#169 Prem</h3></footer>
